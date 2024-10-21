@@ -62,6 +62,7 @@ const RegisterForm = () => {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false); // For toggle visibility
   const { toast } = useToast()
+  const [isSubmiting, setIsSubmiting] = useState(false); // For toggle visibility
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -77,6 +78,7 @@ const RegisterForm = () => {
   // Handle form submission
   const handleSubmit = async (data: z.infer<typeof formSchema>) => {
     try {
+      setIsSubmiting(true);
       const res = await fetch('/api/auth/register', {
         method: 'POST',
         headers: {
@@ -106,7 +108,9 @@ const RegisterForm = () => {
         })
         const errorData = await res.json();
       }
+      setIsSubmiting(false);
     } catch (error) {
+      setIsSubmiting(false);
       toast({
         variant: 'destructive',
         title: 'Failed!',
@@ -194,7 +198,7 @@ const RegisterForm = () => {
               <span>Already have an account? </span>
               <a className="border-b-2" href="/login"> Login</a>
             </div>
-            <Button className="w-full" type="submit">
+            <Button disabled={isSubmiting} className="w-full" type="submit">
               Sign Up
             </Button>
           </form>

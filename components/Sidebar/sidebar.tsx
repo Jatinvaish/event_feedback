@@ -40,6 +40,7 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
       console.error('Failed to clear cookie');
     }
     router.push('/')
+    router.refresh();
 
   };
 

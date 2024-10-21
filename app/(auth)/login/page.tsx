@@ -59,6 +59,7 @@ const formSchema = z.object({
 const LoginForm = () => {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false); // For toggle visibility
+  const [isSubmiting, setIsSubmiting] = useState(false); // For toggle visibility
   const { toast } = useToast()
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -75,6 +76,7 @@ const LoginForm = () => {
   const handleSubmit = async (data: z.infer<typeof formSchema>) => {
 
     try {
+      setIsSubmiting(true)
       const res = await fetch('/api/auth/login', {
         method: 'POST',
         headers: {
@@ -104,7 +106,9 @@ const LoginForm = () => {
           description: 'Invalid email or password',
         })
       }
+      setIsSubmiting(false)
     } catch (error) {
+      setIsSubmiting(false)
       toast({
         variant: 'destructive',
         title: 'Oppse!',
@@ -177,7 +181,7 @@ const LoginForm = () => {
               <Link className="border-b-2" href="/register">Register</Link>
             </div>
 
-            <Button className="w-full" type="submit">
+            <Button disabled={isSubmiting} className="w-full" type="submit">
               Sign In
             </Button>
           </form>

@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Feedback System
 
-## Getting Started
+This is a Next.js application for managing events and user feedback. The application includes JWT-based authentication, a feedback system, and an admin dashboard.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [Folder Structure](#folder-structure)
+- [API Endpoints](#api-endpoints)
+- [Technologies Used](#technologies-used)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Prerequisites
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Make sure you have the following installed on your machine:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [Node.js](https://nodejs.org/en/download/) (v14 or later)
+- [npm](https://www.npmjs.com/get-npm) or [yarn](https://yarnpkg.com/getting-started/install)
 
-## Learn More
+## Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the repository**:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/yourusername/your-repo-name.git
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## ENV Variable
+MONGODB_URI=mongodb://your_mongo_db_uri
+JWT_SECRET=your_jwt_secret
+JWT_EXPIRE= your_jwt_expire
 
-## Deploy on Vercel
+### Instructions for Use
+1. **Update the Repository Link**: Replace `https://github.com/yourusername/your-repo-name.git` with the actual URL of your repository.
+  
+2. **Add Your Own Environment Variables**: Make sure to include the necessary environment variables in the `.env.local` section, adjusting according to what your application requires.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Additional Sections**: Feel free to add any additional sections or notes specific to your project, such as features, known issues, or usage instructions.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This `README.md` will give users clear instructions on how to set up and run the application locally, along with an overview of the folder structure and available API endpoints. Let me know if you need any more modifications!
