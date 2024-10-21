@@ -8,8 +8,6 @@ This is a Next.js application for managing events and user feedback. The applica
 - [Installation](#installation)
 - [Running the Application](#running-the-application)
 - [Folder Structure](#folder-structure)
-- [API Endpoints](#api-endpoints)
-- [Technologies Used](#technologies-used)
 
 ## Prerequisites
 
@@ -25,6 +23,8 @@ Make sure you have the following installed on your machine:
    ```bash
    git clone https://github.com/yourusername/your-repo-name.git
 
+## Running the Application
+
 1. **Add the enviroment variables**:
 
    ```bash
@@ -32,6 +32,42 @@ Make sure you have the following installed on your machine:
    JWT_SECRET=your_jwt_secret
    JWT_EXPIRE= your_jwt_expire
 
+## Folder Structure
+Event MAnagement/
+├── components/
+│   ├── DataTable/
+│   │   └── DataTable.tsx
+│   ├── Feedback/
+│   │   └── FeedbackForm.tsx
+│   └── ui/
+│       └── ...
+├── models/
+│   └── feedback.ts
+├── pages/
+│   ├── api/
+│   │   ├── feedback/
+│   │   │   ├── create/
+│   │   │   │   └── route.ts
+│   │   │   ├── update/
+│   │   │   │   └── route.ts
+│   │   │   ├── delete/
+│   │   │   │   └── route.ts
+│   │   │   ├── getAll/
+│   │   │   │   └── route.ts
+│   │   │   ├── getByEventId/
+│   │   │   │   └── route.ts
+│   │   │   └── getById/
+│   │   │       └── route.ts
+│   │   └── events/
+│   │       └── route.ts
+│   └── index.tsx
+├── styles/
+│   └── ...
+├── utils/
+│   └── ...
+├── .env.local
+├── package.json
+└── README.md
 
 
 ### Instructions for Use
