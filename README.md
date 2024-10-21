@@ -25,10 +25,14 @@ Make sure you have the following installed on your machine:
    ```bash
    git clone https://github.com/yourusername/your-repo-name.git
 
-## ENV Variable
-MONGODB_URI=mongodb://your_mongo_db_uri
-JWT_SECRET=your_jwt_secret
-JWT_EXPIRE= your_jwt_expire
+1. **Add the enviroment variables**:
+
+   ```bash
+   MONGODB_URI=mongodb://your_mongo_db_uri
+   JWT_SECRET=your_jwt_secret
+   JWT_EXPIRE= your_jwt_expire
+
+
 
 ### Instructions for Use
 1. **Update the Repository Link**: Replace `https://github.com/yourusername/your-repo-name.git` with the actual URL of your repository.
